@@ -44,9 +44,9 @@ public class PillDispenser extends JFrame implements ActionListener {
     private void initUI() {
 
         ImageIcon img = new ImageIcon("src/main/resources/pills-icon (1).png");
-        var imageLabel = new JLabel();
+        JLabel imageLabel = new JLabel();
         imageLabel.setIcon(img);
-        var plans = new JLabel("Your medication plans:");
+        JLabel plans = new JLabel("Your medication plans:");
         dateTime.setForeground(new Color(88, 0, 17));
         dateTime.setOpaque(true);
         dateTime.setBackground(new Color(251, 253, 202));
@@ -68,9 +68,9 @@ public class PillDispenser extends JFrame implements ActionListener {
 
     private void createLayout(JComponent... arg) {
 
-        var pane = getContentPane();
+        Container pane = getContentPane();
+        GroupLayout gl = new GroupLayout(pane);
         pane.setBackground(new Color(2, 56, 61));
-        var gl = new GroupLayout(pane);
         pane.setLayout(gl);
         gl.setAutoCreateContainerGaps(true);
 
