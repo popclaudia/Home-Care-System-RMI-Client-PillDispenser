@@ -1,10 +1,6 @@
 package com.example.demo.view;
 
-import com.example.demo.DemoApplication;
 import com.example.demo.client.MedicationPlanInterfac;
-import com.example.demo.client.RMIClient;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
@@ -13,7 +9,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 @Component
 public class Login extends JFrame {
@@ -21,7 +16,7 @@ public class Login extends JFrame {
     private Image backgroundImage;
 
     public Login() {
-        service = SpringApplication.run(RMIClient.class).getBean(MedicationPlanInterfac.class);
+        //service = SpringApplication.run(RMIClient.class).getBean(MedicationPlanInterfac.class);
 
         try {
 
@@ -40,11 +35,15 @@ public class Login extends JFrame {
         initUI();
     }
 
+    public void setInt(MedicationPlanInterfac interfac){
+        service = interfac;
+    }
+
     private void initUI() {
 
-        var quitButton = new JButton("LogIn");
-        var user =new JTextField();
-        var message = new JLabel(" ");
+        JButton quitButton = new JButton("LogIn");
+        JTextField user =new JTextField();
+        JLabel message = new JLabel(" ");
 
         quitButton.addActionListener((ActionEvent event) -> {
             service.hello("Hello from client!");
@@ -81,8 +80,8 @@ public class Login extends JFrame {
 
     private void createLayout(JComponent... arg) {
 
-        var pane = getContentPane();
-        var gl = new GroupLayout(pane);
+        Container pane = getContentPane();
+        GroupLayout gl = new GroupLayout(pane);
         pane.setLayout(gl);
 
         gl.setAutoCreateContainerGaps(true);
