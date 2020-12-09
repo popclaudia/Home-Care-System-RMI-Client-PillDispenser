@@ -42,9 +42,9 @@ public class Login extends JFrame {
 
     private void initUI() {
 
-        var quitButton = new JButton("LogIn");
-        var user =new JTextField();
-        var message = new JLabel(" ");
+        JButton quitButton = new JButton("LogIn");
+        JTextField user =new JTextField();
+        JLabel message = new JLabel(" ");
 
         quitButton.addActionListener((ActionEvent event) -> {
             service.hello("Hello from client!");
@@ -81,8 +81,8 @@ public class Login extends JFrame {
 
     private void createLayout(JComponent... arg) {
 
-        var pane = getContentPane();
-        var gl = new GroupLayout(pane);
+        Container pane = getContentPane();
+        GroupLayout gl = new GroupLayout(pane);
         pane.setLayout(gl);
 
         gl.setAutoCreateContainerGaps(true);
