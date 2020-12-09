@@ -69,8 +69,6 @@ public class PillDispenser extends JFrame implements ActionListener {
     private void createLayout(JComponent... arg) {
 
         Container pane = getContentPane();
-        pane.setBackground(new Color(2, 56, 61));
-        GroupLayout gl = new GroupLayout(pane);
         GroupLayout gl = new GroupLayout(pane);
         pane.setBackground(new Color(2, 56, 61));
         pane.setLayout(gl);
